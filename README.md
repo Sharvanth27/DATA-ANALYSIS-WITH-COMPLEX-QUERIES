@@ -48,10 +48,6 @@ amount (INT)
 
 Inserts five sample rows representing sales transactions involving different products and regions.
 
-<img width="350" alt="Image" src="https://github.com/user-attachments/assets/0f667753-b41d-4771-958e-362e98b5dc43" />
-
-
-
 ---
 
 3. SQL Analysis Queries Demonstrated
@@ -64,6 +60,8 @@ Purpose: Calculates the total sales within each region without collapsing rows.
 
 Insight: Identifies regional performance trends.
 
+<img width="350" alt="Image" src="https://github.com/user-attachments/assets/0f667753-b41d-4771-958e-362e98b5dc43" />
+
 
 b. Window Function: Product-wise Ranking
 
@@ -72,6 +70,8 @@ Uses ROW_NUMBER() OVER (PARTITION BY product ORDER BY amount DESC)
 Purpose: Assigns a rank to each sale within a product category based on the sale amount (highest first).
 
 Insight: Finds top-performing transactions per product.
+
+<img width="351" alt="Image" src="https://github.com/user-attachments/assets/b3396b61-04bb-43fa-b7d9-5797fe7b3a5c" />
 
 
 c. Common Table Expression (CTE): Above-Average Sales
