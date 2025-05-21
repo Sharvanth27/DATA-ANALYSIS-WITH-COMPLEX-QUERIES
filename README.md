@@ -95,3 +95,5 @@ Filter and return only those products whose total sales exceed a given threshold
 
 
 Insight: Identifies best-selling products across all regions.
+
+<img width="170" alt="Image" src="https://github.com/user-attachments/assets/d1a0c21b-2205-4111-87f4-77d6e55bc078" />
