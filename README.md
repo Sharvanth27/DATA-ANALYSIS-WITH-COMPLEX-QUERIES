@@ -48,6 +48,8 @@ amount (INT)
 
 Inserts five sample rows representing sales transactions involving different products and regions.
 
+<img width="350" alt="Image" src="https://github.com/user-attachments/assets/0f667753-b41d-4771-958e-362e98b5dc43" />
+
 
 
 ---
@@ -91,18 +93,3 @@ Filter and return only those products whose total sales exceed a given threshold
 
 
 Insight: Identifies best-selling products across all regions.
-
-
-
----
-
-Execution Platform
-
-All SQL commands were tested and visualized using:
-www.onlinecompiler.com
-This online platform supports MySQL queries and is ideal for writing, running, and observing SQL logic and results interactively.
-
-
----
-
-Let me know if you'd like a sample analysis.sql file or output screenshots to go along with your report or submission.
