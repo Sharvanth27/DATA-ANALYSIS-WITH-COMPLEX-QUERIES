@@ -1,0 +1,73 @@
+-- 1. Create 'sales' table
+CREATE TABLE IF NOT EXISTS sales (
+    id      INT PRIMARY KEY,
+    product VARCHAR(50),
+    region  VARCHAR(50),
+    amount  INT
+);
+
+-- 2. Insert new sample data into 'sales'
+INSERT INTO sales (id, product, region, amount) VALUES
+    (1, 'ProductX', 'North', 220),
+    (2, 'ProductY', 'South', 130),
+    (3, 'ProductX', 'North', 180),
+    (4, 'ProductZ', 'South', 140),
+    (5, 'ProductY', 'North', 170);
+
+-- 3. WINDOW FUNCTION #1: Total sales per region
+SELECT
+    id,
+    product,
+    region,
+    amount,
+    SUM(amount) OVER (PARTITION BY region) AS total_sales_by_region
+FROM
+    sales;
+
+-- 4. WINDOW FUNCTION #2: Rank sales within each product by amount (highest first)
+SELECT
+    id,
+    product,
+    region,
+    amount,
+    ROW_NUMBER() OVER (PARTITION BY product ORDER BY amount DESC) AS rank_within_product
+FROM
+    sales;
+
+-- 5. CTE EXAMPLE: Find sales that exceed their region's average amount
+WITH avg_region AS (
+    SELECT
+        region,
+        AVG(amount) AS avg_amount
+    FROM
+        sales
+    GROUP BY
+        region
+)
+SELECT
+    s.id,
+    s.product,
+    s.region,
+    s.amount,
+    a.avg_amount
+FROM
+    sales s
+    JOIN avg_region a ON s.region = a.region
+WHERE
+    s.amount > a.avg_amount;
+
+-- 6. SUBQUERY EXAMPLE: Products whose total sales exceed 300
+SELECT
+    product,
+    total_sales
+FROM (
+    SELECT
+        product,
+        SUM(amount) AS total_sales
+    FROM
+        sales
+    GROUP BY
+        product
+) AS product_totals
+WHERE
+    total_sales > 300;
