@@ -82,6 +82,8 @@ Filters actual sales that exceed the average in their respective regions.
 
 Insight: Highlights high-performing sales compared to regional averages.
 
+<img width="292" alt="Image" src="https://github.com/user-attachments/assets/b2665a1c-824c-4159-bdf5-4bf2af577766" />
+
 
 d. Subquery: High-Volume Products
 
